@@ -1,0 +1,111 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>Login</title>
+
+		<link rel="stylesheet" href="bootstrap-3.3.4/css/bootstrap.css" media="screen" type="text/css" />
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	
+       <script type="text/javascript" src="plugins/jquery-1.11.2.min.js"></script>
+       <script type="text/javascript" src="cordova.js"></script>
+     	<script src="bootstrap-3.3.4/js/bootstrap.min.js"></script>
+        <script src="plugins/bootbox.min.js"></script>
+        <script src="plugins/bootbox.js"></script>
+        <script src="js/first_screen.js"></script>
+        
+         <style>
+         .navbar-header{
+margin-top: 14px;
+}
+
+#navbar, .retry_button {
+    background-color: #029BFF;
+    border-color: #029BFF;
+  // background-color:#0B0B61;
+   //border-color:#0B0B61;
+  }
+
+.navbar-header{
+ margin-top: 5px !important; 
+ margin-bottom: 5px !important;
+ }
+ 
+ #heading{
+ margin-right:50px;
+ 
+ }
+ 
+ .heading{
+ color: white;
+ 
+}
+         
+         </style>
+ 
+ <script>
+ 
+ $(document).ready(function(){
+				
+    document.addEventListener("deviceready",onDeviceReady,false);   
+        
+});
+ 
+
+   
+    function onDeviceReady() 
+    {
+    
+      document.addEventListener("backbutton", onBackKeyDown, false);
+	}
+	
+	function onBackKeyDown() {
+
+navigator.app.exitApp();
+ 
+}    
+
+
+ function goBack() {
+    window.history.back();
+}
+ 
+ </script>
+ 
+ 
+ 
+</head>
+
+<body >
+
+                <nav id="navbar" class="navbar  navbar-default navbar-fixed-top " role="navigation">
+    <a href="log-in.html" onclick="window.history.go(-1); return false;"></a>
+            <!-- Brand and toggle get grouped for better mobile display -->
+            	<div class="navbar-header col-md-10 col-lg-12 text-center" >
+                
+                
+                    <h4>
+                    <div class="col-lg-12 text-center heading">Welcome to Medical Dictionary</div>
+                    </h4>
+               
+                
+            </div>
+     </nav>       
+          <form method="post"  class="col-lg-12 text-center" role="global" style="position: relative;top: 80px;">
+          
+ <div class='alert alert-danger col-lg-12 text-center' style="margin-top: 75px;" role='alert'>This app requires Internet connection. Make sure you are connected to a wifi network or  switched on your network data.</div>
+<div class="col-lg-12 text-center"> 
+<button id="retry"  onClick="retry()" name="retry" class="btn btn-success">Retry</button>
+
+<button id="close" onClick="onBackKeyDown()" name="close" class="btn btn-danger">Close</button> 
+</div>
+
+
+
+</form>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<meta charset="utf-8" />
+		<title>Forgot PIN</title>
+		
+		
+		 <link rel="stylesheet" href="bootstrap-3.3.4/css/bootstrap.css" media="screen" type="text/css" />
+		<link rel="stylesheet" href="css/font-awesome.css" media="screen" type="text/css" />
+		<link rel="stylesheet" href="css/ace-fonts.css" media="screen" type="text/css" />
+		<link rel="stylesheet" href="css/ace.css" media="screen" type="text/css" />
+		<link rel="stylesheet" href="css/ace-part2.css" media="screen" type="text/css"/>
+		<link rel="stylesheet" href="css/ace-rtl.css" media="screen" type="text/css"/> 
+		<link rel="stylesheet" href="css/ace-ie.css" media="screen" type="text/css"/> 
+		<link rel="stylesheet" href="css/style.css" media="screen" type="text/css">
+		 <link rel="stylesheet" href="lib/intl-tel-input-master/build/css/intlTelInput.css">
+        <link rel="stylesheet" href="lib/intl-tel-input-master/build/css/demo.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		
+	
+        <script type="text/javascript" src="plugins/jquery-1.11.2.min.js"></script>
+    	<script type="text/javascript" src="plugins/jquery-1.11.2.min.js"></script>
+     	<script type="text/javascript" src="cordova.js"></script>
+     	<script src="bootstrap-3.3.4/js/bootstrap.min.js"></script>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.js"></script>
+        <script src="plugins/bootbox.min.js"></script>
+         <script src="plugins/bootbox.js"></script>
+           <script type="text/javascript" src="js/pouchdb-5.3.2.min.js"></script>
+        <script type="text/javascript" src="js/pouchdb.all-dbs.js"></script>
+        
+         <script src="lib/intl-tel-input-master/build/js/intlTelInput.js"></script>
+         <script src="js/forgotpin.js"></script>
+         <script src="js/lang.js"></script>
+         
+         
+         
+        
+        
+        
+ 
+</head>
+
+
+
+
+
+<body class="" style="margin: 0px;">
+<div class="main-container">
+  <!-- Navigation -->
+    <nav id="navbar" class="navbar  navbar-default navbar-fixed-top " role="navigation">
+    <a href="#" onclick="onBackKeyDown();" ><span style= "float:left;"><i class="fa fa-hand-o-left" style="padding-top: 4px;"></i></span></a>
+            <!-- Brand and toggle get grouped for better mobile display -->
+            	<div class="navbar-header">
+                
+                
+                    <h4>
+                    <center><p style="white-space: nowrap;"><span tkey="header_welcome"></span></p></center>
+                    </h4>
+                
+            </div>
+     </nav>   
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    
+    
+
+<div class="container" style="position: relative;top:60px;">
+<span class="alert_bootstrap">
+
+</span>
+<p>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" >
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+      
+      
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active" >
+        <img src="images/pic2.jpg" id="image" alt="Healthcare" width="460" height="345">
+      </div>
+
+      <div class="item" >
+        <img src="images/pic12.jpg" id="image" alt="Healthcare" width="460" height="345">
+      </div>
+    
+      <div class="item" >
+        <img src="images/pic10.jpg" id="image" alt="Healthcare" width="460" height="345">
+      </div>
+
+      <div class="item" >
+        <img src="images/pic7.jpg" id="image" alt="Healthcare" width="460" height="345">
+      </div>
+      <div class="item" >
+        <img src="images/pic4.jpg" id="image" alt="Healthcare" width="460" height="345">
+      </div>
+ 
+    </div>
+    
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  </div>
+  </p>
+
+
+<div class="main-content">
+<div class="row">
+<div class="col-sm-2 col-sm-offset-1">
+<div class="login-container">
+
+<br><br>
+
+
+
+
+
+<div id="signup-box" class=" visible signup-box widget-box no-border">
+<div class="widget-body col-sm-12 col-xs-12 col-md-12">
+<div class="widget-main">
+<h5 class="header black lighter bigger">
+
+<span tkey="please_enter_mobile_number"></span>
+</h5>
+
+
+<div class="input-group">
+	   <span class="block input-icon input-icon-right">
+      <input title="Mobile Number" type="tel" class="form-control"required="" id="phone" tkey="mobile_number"  placeholder=" Mobile Number" inputmode="numeric" pattern="[0-9]*" maxlength="13" />
+	   <i class="ace-icon fa fa-mobile" id="m_icon"></i>
+	    </span>
+		<span class="input-group-btn">
+		<button class="btn btn-sm btn-info custom" id="otpbtn"  type="button">
+	    <b><span tkey="send_otp"></span></b>
+	    </button>
+		</span>
+		<input  id='device_uuid' type="hidden" />
+		
+		</div>
+		<input id="language" type="hidden" value="">
+		<span class="hide" id="please_enter_mobile_number" tkey="please_enter_mobile_number"></span>
+		<span class="hide" id="please_enter_ten_digit_number" tkey="please_enter_ten_digit_number"></span>
+		<span class="hide" id="invalid_mobile_number" tkey="invalid_mobile_number"></span>
+		<span class="hide" id="problem_connecting_with_server" tkey="problem_connecting_with_server"></span>
+		<span class="hide" id="otp_sent_successfully" tkey="otp_sent_successfully"></span>
+		<span class="hide" id="please_enter_registered_mobile_number" tkey="please_enter_registered_mobile_number"></span>
+		<span class="hide" id="please_enter_otp_and_click_on_verify_otp" tkey="please_enter_otp_and_click_on_verify_otp"></span>
+		<span class="hide" id="please_enter_four_digit_log_in_pin" tkey="please_enter_four_digit_log_in_pin"></span>
+		<span class="hide" id="otp_verified_successfully" tkey="otp_verified_successfully"></span>
+		<span class="hide" id="otp_does_not_match" tkey="otp_does_not_match"></span>
+		<span class="hide" id="send_otp" tkey="send_otp"></span>
+		<span class="hide" id="loading" tkey="loading"></span>
+		
+
+		<div class="input-group" id="otp" style="display: none;>
+		<span class="block input-icon input-icon-right">
+		<input title="OTP"  id='verified_otp' type="tel" maxlength="4" class="form-control" required="" placeholder="Enter OTP" inputmode="numeric" />
+		</span>
+		<span class = "input-group-btn" style=" padding-top: 5px;">
+        <button class = "btn btn-sm btn-info custom" id="pinbtn" type = "button"><b><span tkey="verify_otp"></span></b></button>
+        </span>
+        </div>
+		
+</body>
+
+</html>

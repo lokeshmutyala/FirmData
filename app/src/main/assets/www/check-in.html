@@ -1,0 +1,337 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+
+	<title>Visit Verification Check-In Screen</title>
+	<script src="plugins/jquery-1.11.2.min.js"></script>
+	
+	<script type="text/javascript" src="plugins/maps.google.com.maps.api.js"></script>
+	<script src="http://maps.google.com/maps/api/js?sensor=true"></script> 
+	<script type="text/javascript" src="cordova.js"></script>
+	<script src="plugins/jquery-1.11.2.js"></script>
+	<!--<script src="js/check_in.js"></script>-->
+	<link href="check-in.css" rel="stylesheet">
+	<link href="bootstrap-3.3.4/css/bootstrap.css" rel="stylesheet">
+	<script src="bootstrap-3.3.4/js/bootstrap.min.js"></script>
+	<script src="plugins/bootstrap-switch.js"></script>
+	<link href="plugins/bootstrap-switch.css" rel="stylesheet">
+	<script src="js/global.js"></script>
+	<script src="plugins/bootbox.js"></script>
+    <script src="plugins/bootbox.min.js"></script>
+    		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script> 
+     
+      <script>
+          
+          $(document).ready(function(){
+	
+	
+	
+	 $("#submit").on('click', function () {
+        
+        test();
+    });
+    
+
+function test(){
+
+  var question1 = document.getElementsByName("question1");
+  var check1 = 0;
+  for(i=0;i<question1.length;i++){
+    if(question1[i].checked){
+      check1++;
+      break;
+    }
+  }
+ var question2 = document.getElementsByName("question2");
+  var check2 = 0;
+  for(i=0;i<question2.length;i++){
+    if(question2[i].checked){
+      check2++;
+      break;
+    }
+  }
+ var question3 = document.getElementsByName("question3");
+  var check3 = 0;
+  for(i=0;i<question3.length;i++){
+    if(question3[i].checked){
+      check3++;
+      break;
+    }
+  } 
+  
+var question4 = document.getElementsByName("question4");
+  var check4 = 0;
+  for(i=0;i<question4.length;i++){
+    if(question4[i].checked){
+      check4++;
+      break;
+    }
+  } 
+
+var question5 = document.getElementsByName("question5");
+  var check5 = 0;
+  for(i=0;i<question5.length;i++){
+    if(question5[i].checked){
+      check5++;
+      break;
+    }
+  }  
+  
+var question6 = document.getElementsByName("question6");
+  var check6 = 0;
+  for(i=0;i<question6.length;i++){
+    if(question6[i].checked){
+      check6++;
+      break;
+    }
+  }  
+  
+ 
+  if(check1 && check2 && check3 && check4 && check5 && check6){
+      alert("Response has been submitted.");
+  }else{
+    alert("Please answer every question.");
+    return false;
+  }
+}    
+
+    
+	
+});
+          
+      </script>
+      
+      <style>
+     
+          .checkboxes{ 
+          margin-left: 24px;
+          }
+          
+          .questionnaire{
+          background-color: white;
+          padding: 14px;
+          margin-left: 6px;
+          margin-bottom: 6px;
+          margin-right: 5px;"
+          }
+          
+      </style>  
+
+	
+    
+</head>
+
+<body style="background-color: #f1f0f0;">
+ <nav id="navbar" class="navbar  navbar-default navbar-fixed-top " style="background: darkgreen;" role="navigation">
+    
+            <!-- Brand and toggle get grouped for better mobile display -->
+            	<div class="navbar-header">
+                
+                
+                    <h4>
+                    <center><p style="white-space: nowrap; color: white; font-size: 24px;">Store Tracker</p></center>
+                    </h4>
+                
+                
+            </div>
+     </nav>  
+<br><br><br><br>
+<div class="col s12 questionnaire" style="background-color: white;padding: 14px;">
+     
+      <i class="material-icons prefix">play_arrow</i> <b><span style="font-size: 17px;">  Format of Outlet</span></b>
+                <div class="row" >
+               <div class="input-field col s12">
+                   <p>
+                     <input id="l_shape" type="radio" name="question2" value="l_shape" checked>
+                     <label for="l_shape">L - Shape</label>
+                  </p>
+                  <p>
+                     <input id="d_shape" type="radio" name="question2" value="d_shape">
+                     <label for="d_shape">D - Shape</label>
+                  </p>
+                  <p>
+                     <input id="self_service" type="radio" name="question2" value="self_service">
+                     <label for="self_service">Self Service</label>
+                  </p>
+               </div>
+            </div>   
+    </div>
+
+<div class="col s12 questionnaire" style="background-color: white;padding: 14px;">
+     
+      <i class="material-icons prefix">play_arrow</i> <b><span style="font-size: 17px;">  Does the Outlet have Chemist/Druggist Licence?</span></b>
+                <div class="row" >
+               <div class="input-field col s12">
+                   <p>
+                     <input id="question2_yes" type="radio" name="question2" value="question2_yes" checked>
+                     <label for="question2_yes">Yes</label>
+                  </p>
+                  <p>
+                     <input id="question2_no" type="radio" name="question2" value="question2_no">
+                     <label for="question2_no">No</label>
+                  </p>
+               </div>
+            </div>   
+    </div>
+
+ <div class="col s12 questionnaire" style="background-color: white;padding: 14px;">
+     
+      <i class="material-icons prefix">play_arrow</i> <b><span style="font-size: 17px;"> Assets present in the Store</span></b>
+                <p class="checkboxes">
+      <input type="checkbox" id="checkbox1" />
+      <label for="checkbox1">Chocolate Dispenser - Cadbury</label>
+    </p>
+    <p class="checkboxes">
+      <input type="checkbox" id="checkbox2" />
+      <label for="checkbox2">Chocolate Dispenser -Nestle</label>
+    </p>
+    <p class="checkboxes">
+      <input type="checkbox" id="checkbox2" />
+      <label for="checkbox2">Chocolate Dispenser - Luvit</label>
+    </p>
+    <p class="checkboxes">
+      <input type="checkbox" id="checkbox3" />
+      <label for="checkbox3">Red Bull Cooler</label>
+    </p>
+    <p class="checkboxes">
+      <input type="checkbox" id="checkbox4" />
+      <label for="checkbox4">Pepsi Visicooler</label>
+    </p>
+    <p class="checkboxes">
+      <input type="checkbox" id="checkbox5" />
+      <label for="checkbox5">Cocacola Visicooler</label>
+    </p>
+    <p class="checkboxes">
+      <input type="checkbox" id="test5" />
+      <label for="test5">Icecream Refrigerator</label>
+    </p>
+    <p class="checkboxes">
+      <input type="checkbox" id="test5" />
+      <label for="test5">Milk/Curd Refrigerator</label>
+    </p>
+    <p class="checkboxes">
+      <input type="checkbox" id="test5" />
+      <label for="test5">Frozen Foods/Meat Refrigerator</label>
+    </p>
+    <p class="checkboxes">
+      <input type="checkbox" id="test5" />
+      <label for="test5">Own Refrigerator</label>
+    </p>
+    <p class="checkboxes">
+      <input type="checkbox" id="test5" />
+      <label for="test5">Lay's Rack</label>
+    </p>
+    <p class="checkboxes">
+      <input type="checkbox" id="test5" />
+      <label for="test5">Bingo Rack</label>
+    </p>
+    </div>
+		
+                
+<div class="col s12 questionnaire" style="background-color: white;padding: 14px;">
+     
+      <i class="material-icons prefix">play_arrow</i> <b><span style="font-size: 17px;">  Are Sunfeast biscuits present in the store?</span></b>
+                <div class="row" >
+               <div class="input-field col s12">
+                   <p>
+                     <input id="question2_yes" type="radio" name="question2" value="question2_yes">
+                     <label for="question2_yes">Yes</label>
+                  </p>
+                  <p>
+                     <input id="question2_no" type="radio" name="question2" value="question2_no">
+                     <label for="question2_no">No</label>
+                  </p>
+               </div>
+            </div>   
+    </div>
+		
+ 
+
+<div class="col s12 questionnaire" style="background-color: white;padding: 14px;">
+     
+      <i class="material-icons prefix">play_arrow</i> <b><span style="font-size: 17px;">  Is B_Natural present in the store?</span></b>
+                <div class="row" >
+               <div class="input-field col s12">
+                   <p>
+                     <input id="question3_yes" type="radio" name="question3" value="question3_yes">
+                     <label for="question3_yes">Yes</label>
+                  </p>
+                  <p>
+                     <input id="question3_no" type="radio" name="question3" value="question3_no">
+                     <label for="question3_no">No</label>
+                  </p>
+               </div>
+            </div>   
+    </div>
+		
+ 
+
+<div class="col s12 questionnaire" style="background-color: white;padding: 14px;">
+     
+      <i class="material-icons prefix">play_arrow</i> <b><span style="font-size: 17px;">  Does the store sell cigarettes?</span></b>
+                <div class="row" >
+               <div class="input-field col s12">
+                   <p>
+                     <input id="question4_yes" type="radio" name="question4" value="question4_yes">
+                     <label for="question4_yes">Yes</label>
+                  </p>
+                  <p>
+                     <input id="question4_no" type="radio" name="question4" value="question4_no">
+                     <label for="question4_no">No</label>
+                  </p>
+               </div>
+            </div>   
+    </div>
+		
+ 
+
+
+<div class="col s12 questionnaire" style="background-color: white;padding: 14px;">
+     
+      <i class="material-icons prefix">play_arrow</i> <b><span style="font-size: 17px;">  Does the store sell Yippie Noodles?</span></b>
+                <div class="row" >
+               <div class="input-field col s12">
+                   <p>
+                     <input id="question5_yes" type="radio" name="question5" value="question5_yes">
+                     <label for="question5_yes">Yes</label>
+                  </p>
+                  <p>
+                     <input id="question5_no" type="radio" name="question5" value="question5_no">
+                     <label for="question5_no">No</label>
+                  </p>
+               </div>
+            </div>   
+    </div>
+		
+ 
+
+
+<div class="col s12 questionnaire" style="background-color: white;padding: 14px;">
+     
+      <i class="material-icons prefix">play_arrow</i> <b><span style="font-size: 17px;">  Is Engage Deo present in the store?</span></b>
+                <div class="row" >
+               <div class="input-field col s12">
+                   <p>
+                     <input id="question6_yes" type="radio" name="question6" value="question6_yes">
+                     <label for="question6_yes">Yes</label>
+                  </p>
+                  <p>
+                     <input id="question6_no" type="radio" name="question6" value="question6_no">
+                     <label for="question6_no">No</label>
+                  </p>
+               </div>
+            </div>   
+    </div>
+		
+<div class="footer navbar-fixed-bottom submit_button">
+<button class="btn btn-lg btn btn-primary submit_button" id="submit"  style="width: 100%;"name="op" type="button">
+<span>Submit</span>
+</button>
+</div>      
+    
+</body>
+</html>

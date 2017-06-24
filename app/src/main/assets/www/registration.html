@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		
+		<title>Registration</title>
+
+		<link rel="stylesheet" href="bootstrap-3.3.4/css/bootstrap.css" media="screen" type="text/css" />
+		
+		<link rel="stylesheet" href="css/font-awesome.css" media="screen" type="text/css" />
+		
+		<link rel="stylesheet" href="css/style.css" media="screen" type="text/css">
+	    <link rel="stylesheet" href="lib/intl-tel-input-master/build/css/intlTelInput.css">
+        <link rel="stylesheet" href="lib/intl-tel-input-master/build/css/demo.css">
+		<link href="plugins/magic-check.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script> 
+
+		
+    	<script type="text/javascript" src="plugins/jquery-1.11.2.min.js"></script>
+     	<script type="text/javascript" src="cordova.js"></script>
+     	<script src="bootstrap-3.3.4/js/bootstrap.min.js"></script>
+     	<script src="plugins/bootbox.min.js"></script>
+        <script src="plugins/bootbox.js"></script>
+        <script src="plugins/jquery.md5.js"></script>
+        <script src="plugins/jquery.utf8.js"></script>
+        <script type="text/javascript" src="js/pouchdb-5.3.2.min.js"></script>
+        <script type="text/javascript" src="plugins/maps.google.com.maps.api.js"></script>
+	<script src="http://maps.google.com/maps/api/js?sensor=true"></script> 
+
+        <script src="lib/intl-tel-input-master/build/js/intlTelInput.js"></script>
+        <script src="js/register.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/lang.js"></script>
+       
+ <style>
+ 
+ .container ul{
+  list-style: none;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+ul li{
+  color: #FFFF;
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+ margin-bottom: -16px;
+	
+}
+
+ul li input[type=radio]{
+  position: absolute;
+  visibility: hidden;
+}
+
+ul li label{
+  display: block;
+  position: relative;
+  font-weight: 300;
+ 
+  padding: 25px 25px 25px 80px;
+  margin: 10px auto;
+  height: 30px;
+  z-index: 9;
+  cursor: pointer;
+  -webkit-transition: all 0.25s linear;
+}
+
+ul li:hover label{
+	color: #2222;
+}
+
+ul li .check{
+  display: block;
+  position: absolute;
+  border: 5px solid #AAAAAA;
+  border-radius: 100%;
+  height: 25px;
+  width: 25px;
+  top: 30px;
+  left: 20px;
+	z-index: 5;
+	transition: border .25s linear;
+	-webkit-transition: border .25s linear;
+}
+
+ul li .check::before {
+  display: block;
+  position: absolute;
+	content: '';
+  border-radius: 100%;
+  height: 15px;
+  width: 15px;
+  top: 5px;
+	left: 5px;
+  margin: auto;
+	transition: background 0.25s linear;
+	-webkit-transition: background 0.25s linear;
+}
+
+
+.magic-radio + label:before, .magic-checkbox + label:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    content: '';
+    border: 1px solid #c0c0c0;
+    margin-top: 25px;
+}
+
+.magic-radio + label:after {
+    top: 31px;
+    left: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #3e97eb;
+}
+
+
+
+input[type=radio]:checked ~ .check {
+  border: 5px solid #00FFFF;
+}
+
+input[type=radio]:checked ~ .check::before{
+  background: #00FFFF;
+}
+
+input[type=radio]:checked ~ label{
+  color: #FFFF;
+}
+ 
+ 
+ </style>
+
+</head>
+
+
+
+
+
+
+<body class="" style="margin: 0px;">
+<div class="main-container">
+  <!-- Navigation -->
+    <nav id="navbar" class="navbar  navbar-default navbar-fixed-top " style="background: darkgreen;" role="navigation">
+
+            	<div class="navbar-header" style=" margin-top: 5px; margin-bottom: 5px;">
+                
+                <form>
+                   
+                    <center><p style="white-space: nowrap; color: white; font-size: 20px;" class="text-center">Store Tracker</p></center>
+                    
+                </form>
+                
+            </div>
+     </nav>  
+    
+
+<br><br><br>
+
+
+
+
+
+<form accept-charset="UTF-8">
+
+    <div class="row">
+               <div class="input-field col s12">
+                   <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate owner_name">
+          <label for="icon_prefix">Owner Name</label>
+<!--                  <input placeholder="Store Name" id="name" type="text" class="active validate" required>
+                  <label for="name">Store Name</label>-->
+               </div>
+        <div class="input-field col s12">
+                   <i class="material-icons prefix">phone</i>
+          <input id="icon_telephone" type="tel" class="validate phone_number">
+          <label for="icon_telephone">Phone Number</label>
+                   
+<!--                  <label for="number">Phone Number</label>
+                  <input id="password" type="number" placeholder="Phone Number" class="validate" required>          -->
+               </div>
+        <p style="margin-left: 50px;">
+      <input name="group1" type="radio" id="male" checked/>
+      <label for="male">Male</label>
+       <input name="group1" type="radio" id="female" />
+      <label for="female">Female</label>
+    </p>
+     <div style="margin-left: 55px;"> <b>Owner Age<b>
+      <input name="group2" type="radio" id="age_1"/>
+      <label for="age_1">15-25</label>
+       <input name="group2" type="radio" id="age_2" />
+      <label for="age_2">25-35</label>
+      <input name="group2" type="radio" id="age_3" checked/>
+      <label for="age_3">35-50</label>
+       <input name="group2" type="radio" id="age_4" />
+      <label for="age_4">50+</label>
+    </div>
+
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">store</i>
+                   
+          <input id="icon_prefix" type="text" class="validate store_name">
+          <label for="icon_prefix">Store Name</label>
+<!--                  <input placeholder="Owner Name" id="name" type="text" class="active validate" required>
+                  <label for="name">Owner Name</label>-->
+               </div>
+    </div>
+    <div class="row" style="margin-top: -20px;">
+               <div class="input-field col s12">
+			      <i class="material-icons prefix">mode_edit</i>
+                  <textarea id="address" class="materialize-textarea address"></textarea>
+                  <label for="address">Store Address</label>
+               </div>
+            </div>
+    <div class="row">
+               <div class="input-field col s12">
+                   <i class="material-icons prefix">my_location</i>
+          <input id="icon_telephone" type="tel" class="validate pincode">
+          <label for="icon_telephone">Pincode</label>
+                   
+<!--                  <label for="number">Phone Number</label>
+                  <input id="password" type="number" placeholder="Phone Number" class="validate" required>          -->
+               </div>
+    <div class="input-field col s12">
+                   <i class="material-icons prefix">receipt</i>
+          <input id="icon_telephone" type="tel" class="validate gst_number">
+          <label for="icon_telephone">GST Number</label>
+                   
+<!--                  <label for="number">Phone Number</label>
+                  <input id="password" type="number" placeholder="Phone Number" class="validate" required>          -->
+               </div>
+    <div class="input-field col s12">
+                   <i class="material-icons prefix">credit_card</i>
+          <input id="icon_telephone" type="tel" class="validate pan_number">
+          <label for="icon_telephone">PAN Number</label>
+                   
+<!--                  <label for="number">Phone Number</label>
+                  <input id="password" type="number" placeholder="Phone Number" class="validate" required>          -->
+               </div>
+            </div>
+           		
+            
+<!--        
+<button class="width-100 center btn btn-sm btn btn-primary" id="reg"  name="op" type="button">
+<span><b><span>Next</span></b></span>
+</button>-->
+
+<div class="footer navbar-fixed-bottom">
+<button class="btn btn-lg btn btn-primary" id="submit"  style="width: 100%;"name="op" type="button">
+<span><b><span>Next</span></b></span>
+</button>
+</div>
+</form>
+<div id="map-canvas" style="height:450px;display: none;"></div>
+
+	
+</body>
+
+</html>
